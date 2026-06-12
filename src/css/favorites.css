@@ -1,0 +1,137 @@
+.favorites {
+  width: 100%;
+}
+
+/* PAGE HEADER */
+
+.favorites h2 {
+  text-align: center;
+
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 900;
+
+  letter-spacing: -0.04em;
+
+  margin-bottom: 3rem;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #e50914
+  );
+
+  -webkit-text-fill-color: transparent;
+}
+
+/* EMPTY STATE */
+
+.favorites-empty {
+  max-width: 700px;
+
+  margin: 4rem auto;
+
+  padding: 4rem 2rem;
+
+  text-align: center;
+
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.favorites-empty h2 {
+  margin-bottom: 1rem;
+
+  font-size: 2rem;
+  font-weight: 800;
+
+  background: none;
+  -webkit-text-fill-color: #e50914;
+}
+
+.favorites-empty p {
+  color: #a8b0c3;
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* FAVORITES GRID */
+
+.favorites .movies-grid {
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(220px, 1fr)
+  );
+
+  gap: 2rem;
+}
+
+/* CARD ENTRANCE ANIMATION */
+
+@keyframes movieFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.movies-grid > * {
+  animation: movieFadeIn 0.4s ease forwards;
+}
+
+/* EMPTY STATE ICON SUPPORT */
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+
+  opacity: 0.8;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .favorites h2 {
+    margin-bottom: 2rem;
+  }
+
+  .favorites-empty {
+    padding: 3rem 1.5rem;
+    margin: 2rem auto;
+  }
+
+  .favorites-empty h2 {
+    font-size: 1.6rem;
+  }
+
+  .favorites-empty p {
+    font-size: 1rem;
+  }
+
+  .favorites .movies-grid {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(160px, 1fr)
+    );
+
+    gap: 1rem;
+  }
+}
